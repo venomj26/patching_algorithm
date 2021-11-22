@@ -1,3 +1,22 @@
+const switcher = document.querySelector('.btn');
+
+switcher.addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme')
+   
+    var className = document.body.className;
+    if(className == "dark-theme") {
+        this.textContent = "Dark";
+   
+    }
+    else {
+       this.textContent="Light";
+   }
+    console.log('current class name: ' + className);
+});  
+
+
+
+
 function initMap() {
     // Styles a map in night mode.
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -104,7 +123,7 @@ function initMap() {
      
     
 
-
+      
      
 
 
@@ -114,6 +133,6 @@ function initMap() {
 
    }
 
-   
+
   
    

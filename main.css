@@ -2,18 +2,60 @@
        * element that contains the map. */
        #map {
         height: 100%;
-        width: 50%;
-        ;
+        width: 100%;
+        /* left: 50%; */
+        top:0%;
+        overflow: visible;
+        --fontColor: var(--black)
+        
       }
       
       /* Optional: Makes the sample page fill the window. */
       html,
       body {
         height: 100%;
-        margin: 10;
-        padding: 10;
-        background-color: black;
+        margin:0;
+        padding: 0;
+        background-color: rgb(0, 0, 0);
+        --fontColor: var(--black);
+
 
         
       }
+      :root {
+        --green: #1dee7fd7;
+        --white: #ffffff;
+        --black: #000503;
+        --fire: #ee7b62;
+        --purdue: #ffc96c;
+      }
+
+    
+    
+    
+      * {
+        color: var(--fontColor);
+        font-family: 'Courier New';
+        
+      }
+      body {
+          background: var(--bg);
+      }
+    
+    ul {
+        font-family: 'Courier New';
+    }
+    li {
+        list-style: circle;
+      }
+ 
+      
+    
      
+      .dark-theme {
+        --bg: var(--black);
+        --fontColor: var(--purdue);
+      }
+     
+    
+      
