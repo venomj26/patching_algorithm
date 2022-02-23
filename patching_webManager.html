@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- <title>Sidebar menu With Sub-menus | Using HTML, CSS & JQuery</title> -->
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' charset='utf-8'></script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+
+    <!-- <script data-main = 'scripts/main' src = 'scripts/require.js'></script> -->
+    <!-- <script src='scripts/maps.js'></script> -->
+
+  </head>
+  <body class = "dark-theme">
+    
+    <div id="map"></div>
+    <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAwns33HA__CMj0Akz3bB3uVW7GfRVlZpk&libraries=places&callback=initMap'>
+    </script> 
+
+    <div class="overlay">
+      <form id="form-th">
+        <h1>Enter Road</h1>
+        <section class="Road">
+          <label for="patty">Which type of road do you want to set threshold for (please type in camelCase)?</label>
+          <input type="text" name="road" id="road" value="InterState">
+        </section>
+
+        <section class="parameter">
+          <label for="threshold">Select parameter</label>
+          <input id="threshold" type="number" step ="1"  name="threshold">
+        </section>
+      </form>
+    </div> 
+
+
+    <div class='menu-btn'>
+      <i class='fas fa-bars'></i>
+    </div>
+    <div class='side-bar'>
+      <div class='close-btn'>
+        <i class='fas fa-times'></i>
+      </div>
+      <div class='menu'>
+        <div class='item'>
+          <a class='sub-btn'><i class='fas fa-road'></i>Road Selector<i class='fas fa-angle-right dropdown'></i></a>
+          <div class='sub-menu'>
+            <a href='#' class='InterState' id='interState'>Interstate</a>
+            <a href='#' class='State' id='stateRoad'>State</a>
+            <a href='#' class='usH'  id='usH'>US-H</a>
+          </div>
+        </div>
+        
+        <div class='item'>
+          <a class='sub-btn'><i class='fas fa-ruler-combined'></i>Parameter Selector<i class='fas fa-angle-right dropdown'></i></a>
+          <div class='sub-menu'>
+            <a href='#' class='InterState-IRI'>InterState-IRI</a>
+            <a href='#' class='InterState-FWD'>InterState-FWD</a>
+            <a href='#' class='InterState-CD'>InterState-CD</a>
+            <a href='#' class='State-IRI'>State-IRI</a>
+            <a href='#' class='State-FWD'>State-FWD</a>
+            <a href='#' class='State-CD'>State-CD</a>
+            <a href='#' class='USH-IRI'>USH-IRI</a>
+            <a href='#' class='USH-FWD'>USH-FWD</a>
+            <a href='#' class='USH-CD'>USH-CD</a>
+
+          </div>
+        </div>
+        <div class='item'>
+          <a class='sub-btn'><i class='fas fa-cog'></i>Threshold Settings<i class='fas fa-angle-right dropdown'></i></a>
+          <div class='sub-menu'>
+            <a href='#' class='IS-Th' id='IS-Th'>Interstate</a>
+            <a href='#' class='St-Th' id='St-Th'>State</a>
+            <a href='#' class='usH-Th'  id='usH-Th'>US-H</a>
+          </div>
+        </div>
+  
+    
+    
+    <!-- <script type='text/javascript' src='color_icons.js'></script> -->
+    <script type='text/javascript' src='main.js'></script>
+
+
+  </body>
+</html>
