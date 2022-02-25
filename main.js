@@ -281,7 +281,7 @@
         map.data.setStyle((feature) => {
           console.log(feature.getProperty("color"));
           return {
-            icon: icons[`img/icon_${feature.getProperty('color')}.png`],
+            icon: icons[`icon_${feature.getProperty('color')}`],
             scaledSize: new google.maps.Size(24, 24),
           };
         });
@@ -302,7 +302,7 @@
         //creating different colored markers for each color in  the geojson file
         map.data.setStyle((feature) => {
           return {
-            icon: icons[`img/icon_${feature.getProperty('color')}.png`],
+            icon: icons[`icon_${feature.getProperty('color')}`],
             scaledSize: new google.maps.Size(24, 24),
           };
         });
