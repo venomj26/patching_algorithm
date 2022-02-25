@@ -276,7 +276,7 @@
     
       // Load the stores GeoJSON onto the map.
       if(road==='interState'){
-        map.data.loadGeoJson('/sampled_patching_IS.json');
+        map.data.loadGeoJson('sampled_patching_IS.json');
         //creating different colored markers for each color in  the geojson file
         map.data.setStyle((feature) => {
           console.log(feature.getProperty("color"));
@@ -286,7 +286,7 @@
           };
         });
       }else if(road==='stateRoad'){
-        map.data.loadGeoJson('/sampled_patching_SR.json');
+        map.data.loadGeoJson('sampled_patching_SR.json');
         //creating different colored markers for each color in  the geojson file
         map.data.setStyle((feature) => {
           // console.log(feature.getProperty("color"));
@@ -298,7 +298,7 @@
           };
         });
       }else if(road==='usH'){
-        map.data.loadGeoJson('/patching_allfiles_USH.json');
+        map.data.loadGeoJson('patching_allfiles_USH.json');
         //creating different colored markers for each color in  the geojson file
         map.data.setStyle((feature) => {
           return {
