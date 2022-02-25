@@ -281,10 +281,8 @@
         map.data.setStyle((feature) => {
           console.log(feature.getProperty("color"));
           return {
-            icon: {
-              url: `img/icon_${feature.getProperty('color')}.png`,
-              scaledSize: new google.maps.Size(24, 24),
-            },
+            icon: icons[`img/icon_${feature.getProperty('color')}.png`],
+            scaledSize: new google.maps.Size(24, 24),
           };
         });
       }else if(road==='stateRoad'){
@@ -304,10 +302,8 @@
         //creating different colored markers for each color in  the geojson file
         map.data.setStyle((feature) => {
           return {
-            icon: {
-              url: `img/icon_${feature.getProperty('color')}.png`,
-              scaledSize: new google.maps.Size(24, 24),
-            },
+            icon: icons[`img/icon_${feature.getProperty('color')}.png`],
+            scaledSize: new google.maps.Size(24, 24),
           };
         });
       }else if(road === 'InterState-IRI'){
