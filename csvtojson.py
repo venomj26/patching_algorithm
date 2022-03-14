@@ -4,9 +4,13 @@
 import csv
 import json
 from collections import OrderedDict
+import math
 
 li = []
-with open('sr57_patching_color.csv', newline='') as csvfile:
+#with open('/Users/jhasneha/Documents/spring2022/SPRINDOT/roadSchoolDemoData/SR327/Sampled_SR327_demo_patching_image.csv', newline='') as csvfile:
+#with open('/Users/jhasneha/Documents/spring2022/SPRINDOT/roadSchoolDemoData/US421/Sampled_US421_demo_patching.csv', newline='') as csvfile:
+with open('/Users/jhasneha/Documents/spring2022/SPRINDOT/roadSchoolDemoData/I69/Sampled_I69_demo_patching_working_roadschoool.csv', newline='') as csvfile:
+
     reader = csv.DictReader(csvfile)
     for row in reader:
         #print(row)
@@ -17,16 +21,20 @@ with open('sr57_patching_color.csv', newline='') as csvfile:
         }
         d['type'] = 'Feature'
         d['properties']={
-            'DMI': row['DMI'],
-            'L_IRI' : row["L_IRI"],
-            'R_IRI' : row["R_IRI"],
+            'DMI': (row['DMI']),
+            'L_IRI': math.trunc(float(row["L_IRI"])*100)/100,
+            'R_IRI': math.trunc(float(row["R_IRI"])*100)/100,
             'patching': row["Patching_color_map"],
             'color':row["Patching_color"],
-            'D0':row["D0"],
-            'D48' : row["D48"],
-            'BDI' : row["BDI"],
-            'BCI' : row["BCI"],
-            'SCI' : row["SCI"]
+            'D0': math.trunc(float(row["D0"])*100)/100,
+            'D48': math.trunc(float(row["D48"])*100)/100,
+            'BDI': math.trunc(float(row["BDI"])*100)/100,
+            'BCI': math.trunc(float(row["BCI"])*100)/100,
+            'SCI': round(float(row["SCI"]),3),
+            #'image': row["image2D"],
+            'Road': row["Road"],
+            'Bound': row["Bound"],
+            'Lane': row["Lane"]
         }
         li.append(d)
 
@@ -34,7 +42,11 @@ d = OrderedDict()
 d['type'] = 'FeatureCollection'
 d['features'] = li
 
-with open('sr57_patching_color.json','w') as f:
+# with open('SampledRoadSchooldemoPatchingSR327image.json','w') as f:
+#     json.dump(d,f,indent=4)
+# with open('SampledRoadSchooldemoPatchingUS421.json','w') as f:
+#     json.dump(d,f,indent=4)
+with open('SampledRoadSchooldemoPatchingI69.json','w') as f:
     json.dump(d,f,indent=4)
 
 # %%
