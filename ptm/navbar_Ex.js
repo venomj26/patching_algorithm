@@ -408,7 +408,7 @@ function initMap(road) {
       <p><img src="https://maps.googleapis.com/maps/api/streetview?size=350x120&location=${position.lat()},${position.lng()}&key=${apiKey}"></p>
     </div>
     `;
-      console.log(content);
+
       infoWindow.setContent(content);
       infoWindow.setPosition(position);
       infoWindow.setOptions({
@@ -476,6 +476,7 @@ function initMap(road) {
       <p><img src="https://maps.googleapis.com/maps/api/streetview?size=350x120&location=${position.lat()},${position.lng()}&key=${apiKey}"></p>
     </div>
     `;
+      console.log(content);
       infoWindow.setContent(content);
       infoWindow.setPosition(position);
       infoWindow.setOptions({
